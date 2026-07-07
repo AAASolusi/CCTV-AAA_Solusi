@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. WhatsApp Configuration
-    const WHATSAPP_NUMBER = '6281234567890'; // Change to actual business WhatsApp number
+    const WHATSAPP_NUMBER = '6285888098639'; // Change to actual business WhatsApp number
 
     // 2. Mobile Navigation Toggle
     const menuToggle = document.getElementById('menuToggle');
