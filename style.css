@@ -541,14 +541,67 @@ section {
     line-height: 1.5;
 }
 
-/* Packages Grid */
+/* Packages Slider Container & Buttons */
+.packages-slider-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(19, 25, 43, 0.9);
+    border: 1px solid var(--border-color);
+    color: var(--text-white);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.slider-btn:hover {
+    background: var(--accent-gradient);
+    color: #000;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: -25px;
+}
+
+.next-btn {
+    right: -25px;
+}
+
+/* Packages Grid (Slider Mode) */
 .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 15px 5px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.packages-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .pkg-card {
+    flex: 0 0 calc(33.333% - 16px);
+    scroll-snap-align: start;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
@@ -558,6 +611,32 @@ section {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition);
+}
+
+/* Slider Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-dot.active {
+    width: 28px;
+    border-radius: 50px;
+    background: var(--accent-gradient);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
 .pkg-card:hover {
@@ -1223,8 +1302,8 @@ section {
     .hubungi-container {
         gap: 40px;
     }
-    .packages-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .pkg-card {
+        flex: 0 0 calc(50% - 12px);
     }
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1289,9 +1368,14 @@ section {
         grid-template-columns: 1fr;
     }
     .packages-grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
+    }
+    .pkg-card {
+        flex: 0 0 100%;
+    }
+    .slider-btn {
+        display: none;
     }
     .showcase-container {
         grid-template-columns: 1fr;

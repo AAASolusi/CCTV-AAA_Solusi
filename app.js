@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. WhatsApp Configuration
-    const WHATSAPP_NUMBER = '6285888098639'; // Change to actual business WhatsApp number
+    const WHATSAPP_NUMBER = '6281234567890'; // Change to actual business WhatsApp number
 
     // 2. Mobile Navigation Toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -118,6 +118,73 @@ document.addEventListener('DOMContentLoaded', () => {
             // Open WA in a new tab
             window.open(waUrl, '_blank');
         });
+    }
+
+    // 5.5 CCTV Packages Slider Logic
+    const packagesGrid = document.getElementById('packagesGrid');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const sliderDotsContainer = document.getElementById('sliderDots');
+
+    if (packagesGrid && prevBtn && nextBtn && sliderDotsContainer) {
+        const cards = packagesGrid.querySelectorAll('.pkg-card');
+        const cardCount = cards.length;
+
+        // Generate dot elements
+        for (let i = 0; i < cardCount; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            
+            // Click on dot scrolls to specific card
+            dot.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth + 24; // Card width + gap (24px)
+                packagesGrid.scrollTo({
+                    left: i * cardWidth,
+                    behavior: 'smooth'
+                });
+            });
+            sliderDotsContainer.appendChild(dot);
+        }
+
+        const dots = sliderDotsContainer.querySelectorAll('.slider-dot');
+
+        // Scroll listener to update active dots
+        const updateDots = () => {
+            const cardWidth = cards[0].offsetWidth + 24;
+            const scrollLeft = packagesGrid.scrollLeft;
+            const activeIndex = Math.round(scrollLeft / cardWidth);
+
+            dots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+
+        packagesGrid.addEventListener('scroll', updateDots);
+
+        // Next and Prev Button Events
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = cards[0].offsetWidth + 24;
+            packagesGrid.scrollBy({
+                left: cardWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = cards[0].offsetWidth + 24;
+            packagesGrid.scrollBy({
+                left: -cardWidth,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Handle window resizing to make sure calculations remain correct
+        window.addEventListener('resize', updateDots);
     }
 
     // 6. Smooth Scroll for Anchor Links (Polite backup)
