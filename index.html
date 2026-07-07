@@ -392,7 +392,7 @@
                 <p class="section-desc">Kualitas layanan dan kepuasan pelanggan adalah prioritas utama CCTV AAA Solusi. Berikut testimoni dari mereka yang telah mempercayakan keamanannya kepada kami.</p>
             </div>
 
-            <div class="testimonials-grid">
+            <div class="testimonials-grid" id="testimonialsGrid">
                 
                 <div class="testimonial-card">
                     <div class="stars">
@@ -437,6 +437,56 @@
                 </div>
 
             </div>
+
+            <!-- Form Ulasan Pelanggan -->
+            <div class="review-form-wrapper">
+                <div class="review-form-header">
+                    <span class="section-tag">Bagikan Pengalaman Anda</span>
+                    <h3>Kirim Ulasan Pelanggan</h3>
+                    <p>Ulasan Anda sangat berarti bagi kami untuk terus memberikan pelayanan instalasi CCTV terbaik.</p>
+                </div>
+                
+                <form id="reviewForm" class="review-form">
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="reviewName">Nama Lengkap</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="reviewName" placeholder="Contoh: Bapak Ahmad" required>
+                            </div>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="reviewRole">Pekerjaan / Lokasi (Contoh: Pemilik Rumah, Sepatan)</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-marker-alt input-icon"></i>
+                                <input type="text" id="reviewRole" placeholder="Contoh: Pemilik Ruko, Pasar Kemis" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Berikan Rating Bintang</label>
+                        <div class="rating-select" id="ratingSelect">
+                            <i class="fas fa-star star-btn active" data-rating="1"></i>
+                            <i class="fas fa-star star-btn active" data-rating="2"></i>
+                            <i class="fas fa-star star-btn active" data-rating="3"></i>
+                            <i class="fas fa-star star-btn active" data-rating="4"></i>
+                            <i class="fas fa-star star-btn active" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="reviewRating" value="5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewText">Tulis Ulasan Anda</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-comment-alt input-icon-textarea"></i>
+                            <textarea id="reviewText" rows="3" placeholder="Tuliskan pengalaman puas Anda terhadap pelayanan kami..." required></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gradient"><i class="fas fa-paper-plane"></i> Kirim Ulasan Saya</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -473,6 +523,16 @@
                         <p>Aset Anda adalah prioritas kami. Semua instalasi mengikuti standar keamanan ketat.</p>
                     </div>
                 </div>
+
+                <!-- Google Maps Card -->
+                <div class="map-card">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.2904001073616!2d106.55298397570022!3d-6.091527093894739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a01130ddd3ef5%3A0x6b9809b41f8c5519!2sCCTV%20AAA%20Solusi!5e0!3m2!1sen!2sid!4v1783389245102!5m2!1sen!2sid" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <a href="https://www.google.com/maps/place/CCTV+AAA+Solusi/@-6.091527,106.5529839,17z" target="_blank" class="map-link-overlay" title="Buka di Google Maps">
+                            <span class="map-btn"><i class="fas fa-map-marker-alt"></i> Buka Petunjuk Arah</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="hubungi-form-container">
@@ -491,7 +551,7 @@
                         <label for="phone">Nomor WhatsApp / HP</label>
                         <div class="input-wrapper">
                             <i class="fab fa-whatsapp input-icon"></i>
-                            <input type="tel" id="phone" placeholder="Contoh: 0812xxxxxxxx" required>
+                            <input type="tel" id="phone" placeholder="Contoh: 0858xxxxxxxx" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -565,7 +625,7 @@
                 <h3>Layanan Pelanggan</h3>
                 <p><i class="fas fa-phone-alt text-accent"></i> +62 858-8809-8639</p>
                 <p><i class="fas fa-envelope text-accent"></i> info@cctvaaadesign.com</p>
-                <p><i class="fas fa-map-marker-alt text-accent"></i> Jl. Raya Tangerang No. 123, Tangerang, Banten</p>
+                <p><i class="fas fa-map-marker-alt text-accent"></i> Perumahan Griya Arta Sepatan, Kab Tangerang, Banten 15330</p>
             </div>
         </div>
         <div class="footer-bottom">
