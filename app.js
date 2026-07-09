@@ -206,4 +206,104 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 7. Review Form - Interaktif Rating Bintang & Submit
+    const ratingSelect    = document.getElementById('ratingSelect');
+    const reviewRatingInput = document.getElementById('reviewRating');
+    const reviewForm      = document.getElementById('reviewForm');
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    const reviewSuccessToast = document.getElementById('reviewSuccessToast');
+
+    // --- Rating bintang interaktif ---
+    if (ratingSelect && reviewRatingInput) {
+        const starBtns = ratingSelect.querySelectorAll('.star-btn');
+        let selectedRating = 5;
+
+        const updateStars = (hoverRating) => {
+            starBtns.forEach(star => {
+                const r = parseInt(star.getAttribute('data-rating'));
+                if (r <= hoverRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        };
+
+        starBtns.forEach(star => {
+            star.addEventListener('mouseenter', () => {
+                updateStars(parseInt(star.getAttribute('data-rating')));
+            });
+            star.addEventListener('mouseleave', () => {
+                updateStars(selectedRating);
+            });
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.getAttribute('data-rating'));
+                reviewRatingInput.value = selectedRating;
+                updateStars(selectedRating);
+            });
+        });
+
+        // Inisialisasi tampilan bintang
+        updateStars(selectedRating);
+    }
+
+    // --- Submit form ulasan → tambah kartu ke grid ---
+    if (reviewForm && testimonialsGrid && reviewSuccessToast) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name   = document.getElementById('reviewName').value.trim();
+            const role   = document.getElementById('reviewRole').value.trim();
+            const rating = parseInt(reviewRatingInput.value) || 5;
+            const text   = document.getElementById('reviewText').value.trim();
+
+            if (!name || !role || !text) return;
+
+            // Buat bintang HTML sesuai rating
+            const starsHtml = Array.from({ length: 5 }, (_, i) =>
+                `<i class="fas fa-star" style="${i < rating ? 'color:var(--warning-gold)' : 'color:rgba(255,255,255,0.15)'}"></i>`
+            ).join('');
+
+            // Buat singkatan nama untuk avatar
+            const initials = name.split(' ').slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+            // Buat elemen kartu ulasan baru
+            const newCard = document.createElement('div');
+            newCard.className = 'testimonial-card new-review';
+            newCard.innerHTML = `
+                <div class="stars">${starsHtml}</div>
+                <p class="testimonial-text">"${text}"</p>
+                <div class="user-info">
+                    <div class="user-avatar">${initials}</div>
+                    <div>
+                        <h4 class="user-name">${name}</h4>
+                        <span class="user-role">${role}</span>
+                    </div>
+                </div>`;
+
+            // Tambahkan kartu pertama di grid testimoni
+            testimonialsGrid.prepend(newCard);
+
+            // Tampilkan toast notifikasi sukses
+            reviewSuccessToast.classList.add('show');
+            setTimeout(() => reviewSuccessToast.classList.remove('show'), 5000);
+
+            // Reset form
+            reviewForm.reset();
+            reviewRatingInput.value = 5;
+            ratingSelect.querySelectorAll('.star-btn').forEach((star, i) => {
+                star.classList.toggle('active', i < 5);
+            });
+
+            // Scroll ke bagian testimoni agar ulasan terlihat
+            const testimoniSection = document.getElementById('testimoni');
+            if (testimoniSection) {
+                window.scrollTo({
+                    top: testimoniSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
 });

@@ -1351,6 +1351,190 @@ section {
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
 }
+/* ==================================================
+   Review Form - Form Ulasan Pelanggan
+================================================== */
+.review-form-wrapper {
+    margin-top: 70px;
+    background: linear-gradient(135deg, rgba(28, 37, 61, 0.7) 0%, rgba(19, 25, 43, 0.9) 100%);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    border-radius: var(--border-radius-lg);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.review-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+}
+
+.review-form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.review-form-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-white);
+    margin: 10px 0 8px;
+}
+
+.review-form-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.review-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* Rating Stars */
+.rating-select {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.star-btn {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.star-btn.active {
+    color: var(--warning-gold);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+    color: var(--warning-gold);
+}
+
+/* Review Form Inputs Override */
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    background-color: rgba(10, 15, 29, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-white);
+    padding: 12px 16px 12px 44px;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+    color: #4b5563;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.1);
+    background-color: rgba(10, 15, 29, 0.95);
+}
+
+.review-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-white);
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Submit Button */
+.review-form .btn-gradient {
+    align-self: flex-start;
+    padding: 14px 36px;
+    font-size: 1rem;
+}
+
+/* Success Notification */
+.review-success-toast {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    color: var(--success-green);
+    font-weight: 600;
+    animation: fadeInDown 0.4s ease;
+}
+
+.review-success-toast.show {
+    display: flex;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* New User Review Card Animation */
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-card.new-review {
+    animation: slideInUp 0.5s ease forwards;
+    border-color: rgba(0, 242, 254, 0.3);
+    background-color: rgba(28, 37, 61, 0.8);
+}
+
+/* Responsive Review Form */
+@media (max-width: 768px) {
+    .review-form-wrapper {
+        padding: 28px 20px;
+        margin-top: 50px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .review-form .btn-gradient {
+        width: 100%;
+        justify-content: center;
+    }
+    .star-btn {
+        font-size: 1.5rem;
+    }
+}
 
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
