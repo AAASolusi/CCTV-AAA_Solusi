@@ -424,109 +424,45 @@
                 </div>
 
             </div>
-
-            <!-- Form Ulasan Pelanggan -->
-            <div class="review-form-wrapper">
-                <div class="review-form-header">
-                    <span class="section-tag">Bagikan Pengalaman Anda</span>
-                    <h3>Tulis Ulasan Pelanggan</h3>
-                    <p>Ulasan Anda sangat berarti bagi kami untuk terus memberikan pelayanan instalasi CCTV terbaik di Tangerang.</p>
-                </div>
-
-                <!-- Toast Sukses -->
-                <div class="review-success-toast" id="reviewSuccessToast">
-                    <i class="fas fa-check-circle" style="font-size:1.4rem;"></i>
-                    <span>Terima kasih! Ulasan Anda berhasil ditambahkan dan sudah tampil di atas.</span>
-                </div>
-
-                <form id="reviewForm" class="review-form">
-                    <!-- Baris 1: Nama & Peran -->
-                    <div class="form-row">
-                        <div class="form-group flex-1">
-                            <label for="reviewName">Nama Lengkap</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-user input-icon"></i>
-                                <input type="text" id="reviewName" placeholder="Contoh: Bapak Ahmad" required>
-                            </div>
-                        </div>
-                        <div class="form-group flex-1">
-                            <label for="reviewRole">Pekerjaan / Lokasi</label>
-                            <div class="input-wrapper">
-                                <i class="fas fa-map-marker-alt input-icon"></i>
-                                <input type="text" id="reviewRole" placeholder="Contoh: Pemilik Ruko, Pasar Kemis" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Baris 2: Rating Bintang -->
-                    <div class="form-group">
-                        <label>Rating Kepuasan Anda</label>
-                        <div class="rating-select" id="ratingSelect">
-                            <i class="fas fa-star star-btn active" data-rating="1"></i>
-                            <i class="fas fa-star star-btn active" data-rating="2"></i>
-                            <i class="fas fa-star star-btn active" data-rating="3"></i>
-                            <i class="fas fa-star star-btn active" data-rating="4"></i>
-                            <i class="fas fa-star star-btn active" data-rating="5"></i>
-                        </div>
-                        <input type="hidden" id="reviewRating" value="5">
-                    </div>
-
-                    <!-- Baris 3: Teks Ulasan -->
-                    <div class="form-group">
-                        <label for="reviewText">Tuliskan Ulasan Anda</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-comment-alt input-icon-textarea"></i>
-                            <textarea id="reviewText" rows="4" placeholder="Tuliskan pengalaman puas Anda terhadap pelayanan kami..." required></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Submit -->
-                    <button type="submit" class="btn btn-gradient">
-                        <i class="fas fa-paper-plane"></i> Kirim Ulasan Saya
-                    </button>
-                </form>
-            </div>
         </div>
     </section>
 
     <!-- Hubungi Kami / Consultation Section -->
     <section class="hubungi" id="hubungi">
-        <div class="container hubungi-container">
-            
-            <div class="hubungi-info">
+        <div class="container">
+            <div class="section-header">
                 <span class="section-tag">Hubungi Kami</span>
-                <h2 class="hubungi-title">Dapatkan Konsultasi & Survei Lokasi Gratis Sekarang</h2>
-                <p class="hubungi-desc">Punya pertanyaan seputar CCTV atau butuh penawaran khusus? Isi formulir di samping atau hubungi WhatsApp kami. Tim kami akan segera merespon dalam waktu maksimal 10 menit!</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                        <div>
-                            <h4>WhatsApp Hotline</h4>
-                            <p>+62 858-8809-8639</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <div>
-                            <h4>Area Layanan Jabodetabek</h4>
-                            <p>Jakarta, Bogor, Depok, Tangerang, Bekasi, dsb.</p>
-                        </div>
+                <h2 class="section-title">Konsultasi, Ulasan & Survei Lokasi Gratis</h2>
+                <p class="section-desc">Punya pertanyaan seputar CCTV atau ingin berbagi pengalaman? Tim kami siap merespons dalam maksimal 10 menit!</p>
+            </div>
+
+            <!-- Info Kontak & Peta -->
+            <div class="hubungi-info-bar">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <h4>WhatsApp Hotline</h4>
+                        <p>+62 858-8809-8639</p>
                     </div>
                 </div>
-
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div>
+                        <h4>Area Layanan</h4>
+                        <p>Jabodetabek & Sekitarnya</p>
+                    </div>
+                </div>
                 <div class="safety-badge">
                     <i class="fas fa-user-shield"></i>
                     <div>
                         <h4>Proteksi Keamanan Berlapis</h4>
-                        <p>Aset Anda adalah prioritas kami. Semua instalasi mengikuti standar keamanan ketat.</p>
+                        <p>Semua instalasi mengikuti standar keamanan ketat.</p>
                     </div>
                 </div>
-
                 <!-- Google Maps Card -->
                 <div class="map-card">
                     <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.2904001073616!2d106.55298397570022!3d-6.091527093894739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a01130ddd3ef5%3A0x6b9809b41f8c5519!2sCCTV%20AAA%20Solusi!5e0!3m2!1sen!2sid!4v1783389245102!5m2!1sen!2sid" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.2904001073616!2d106.55298397570022!3d-6.091527093894739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a01130ddd3ef5%3A0x6b9809b41f8c5519!2sCCTV%20AAA%20Solusi!5e0!3m2!1sen!2sid!4v1783389245102!5m2!1sen!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <a href="https://www.google.com/maps/place/CCTV+AAA+Solusi/@-6.091527,106.5529839,17z" target="_blank" class="map-link-overlay" title="Buka di Google Maps">
                             <span class="map-btn"><i class="fas fa-map-marker-alt"></i> Buka Petunjuk Arah</span>
                         </a>
@@ -534,60 +470,136 @@
                 </div>
             </div>
 
-            <div class="hubungi-form-container">
-                <h3>Formulir Konsultasi Gratis</h3>
-                <p class="form-subtext">Isi data di bawah ini, formulir akan otomatis terhubung ke WhatsApp kami.</p>
-                
-                <form id="consultationForm" class="consultation-form">
-                    <div class="form-group">
-                        <label for="name">Nama Lengkap</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-user input-icon"></i>
-                            <input type="text" id="name" placeholder="Contoh: Budi Santoso" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Nomor WhatsApp / HP</label>
-                        <div class="input-wrapper">
-                            <i class="fab fa-whatsapp input-icon"></i>
-                            <input type="tel" id="phone" placeholder="Contoh: 0858xxxxxxxx" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Lokasi / Kecamatan (Tangerang)</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-map-marker-alt input-icon"></i>
-                            <input type="text" id="location" placeholder="Contoh: Karawaci, Tangerang Kota" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="package">Paket CCTV yang Diminati</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-box-open input-icon"></i>
-                            <select id="package" required>
-                                <option value="" disabled selected>Pilih Paket CCTV</option>
-                                <option value="Paket 2 Kamera Hilook - Rp 2.750.000">Paket 2 Kamera Hilook - Rp 2.750.000</option>
-                                <option value="Paket 4 Kamera Hilook - Rp 3.650.000">Paket 4 Kamera Hilook - Rp 3.650.000</option>
-                                <option value="Paket 6 Kamera Hilook - Rp 5.250.000">Paket 6 Kamera Hilook - Rp 5.250.000</option>
-                                <option value="Paket 8 Kamera Hilook - Rp 6.350.000">Paket 8 Kamera Hilook - Rp 6.350.000</option>
-                                <option value="Paket 10 Kamera Hilook - Rp 8.050.000">Paket 10 Kamera Hilook - Rp 8.050.000</option>
-                                <option value="Paket 16 Kamera Hilook - Rp 11.950.000">Paket 16 Kamera Hilook - Rp 11.950.000</option>
-                                <option value="Custom Paket / Jasa Pasang Saja">Kustom Paket / Jasa Pasang Saja</option>
-                                <option value="Perbaikan / Jasa Perbaikan">Maintenance / Jasa Perbaikan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Catatan Tambahan (Opsional)</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-comment-alt input-icon-textarea"></i>
-                            <textarea id="message" rows="3" placeholder="Tuliskan kebutuhan khusus Anda..."></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-gradient btn-full"><i class="fab fa-whatsapp"></i> Hubungkan ke WhatsApp</button>
-                </form>
-            </div>
+            <!-- Dua Form Berdampingan -->
+            <div class="dual-form-grid">
 
+                <!-- Form Ulasan Pelanggan -->
+                <div class="form-panel review-panel">
+                    <div class="form-panel-header">
+                        <div class="form-panel-icon"><i class="fas fa-star"></i></div>
+                        <div>
+                            <span class="section-tag">Bagikan Pengalaman Anda</span>
+                            <h3>Tulis Ulasan Pelanggan</h3>
+                            <p>Ulasan Anda sangat berarti bagi kami untuk terus meningkatkan pelayanan terbaik.</p>
+                        </div>
+                    </div>
+
+                    <!-- Toast Sukses -->
+                    <div class="review-success-toast" id="reviewSuccessToast">
+                        <i class="fas fa-check-circle" style="font-size:1.4rem;"></i>
+                        <span>Terima kasih! Ulasan Anda berhasil ditambahkan dan sudah tampil di atas.</span>
+                    </div>
+
+                    <form id="reviewForm" class="review-form">
+                        <!-- Baris 1: Nama & Peran -->
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label for="reviewName">Nama Lengkap</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="reviewName" placeholder="Contoh: Bapak Ahmad" required>
+                                </div>
+                            </div>
+                            <div class="form-group flex-1">
+                                <label for="reviewRole">Pekerjaan / Lokasi</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-map-marker-alt input-icon"></i>
+                                    <input type="text" id="reviewRole" placeholder="Contoh: Pemilik Ruko, Pasar Kemis" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Baris 2: Rating Bintang -->
+                        <div class="form-group">
+                            <label>Rating Kepuasan Anda</label>
+                            <div class="rating-select" id="ratingSelect">
+                                <i class="fas fa-star star-btn active" data-rating="1"></i>
+                                <i class="fas fa-star star-btn active" data-rating="2"></i>
+                                <i class="fas fa-star star-btn active" data-rating="3"></i>
+                                <i class="fas fa-star star-btn active" data-rating="4"></i>
+                                <i class="fas fa-star star-btn active" data-rating="5"></i>
+                            </div>
+                            <input type="hidden" id="reviewRating" value="5">
+                        </div>
+
+                        <!-- Baris 3: Teks Ulasan -->
+                        <div class="form-group">
+                            <label for="reviewText">Tuliskan Ulasan Anda</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment-alt input-icon-textarea"></i>
+                                <textarea id="reviewText" rows="4" placeholder="Tuliskan pengalaman puas Anda terhadap pelayanan kami..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn btn-gradient btn-full">
+                            <i class="fas fa-paper-plane"></i> Kirim Ulasan Saya
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Form Konsultasi -->
+                <div class="form-panel consultation-panel">
+                    <div class="form-panel-header">
+                        <div class="form-panel-icon consultation-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <span class="section-tag">Konsultasi Gratis</span>
+                            <h3>Formulir Konsultasi</h3>
+                            <p>Isi data di bawah ini, formulir akan otomatis terhubung ke WhatsApp kami.</p>
+                        </div>
+                    </div>
+
+                    <form id="consultationForm" class="consultation-form">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" placeholder="Contoh: Budi Santoso" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp / HP</label>
+                            <div class="input-wrapper">
+                                <i class="fab fa-whatsapp input-icon"></i>
+                                <input type="tel" id="phone" placeholder="Contoh: 0858xxxxxxxx" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Lokasi / Kecamatan (Tangerang)</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-marker-alt input-icon"></i>
+                                <input type="text" id="location" placeholder="Contoh: Karawaci, Tangerang Kota" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="package">Paket CCTV yang Diminati</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-box-open input-icon"></i>
+                                <select id="package" required>
+                                    <option value="" disabled selected>Pilih Paket CCTV</option>
+                                    <option value="Paket 2 Kamera Hilook - Rp 2.750.000">Paket 2 Kamera Hilook - Rp 2.750.000</option>
+                                    <option value="Paket 4 Kamera Hilook - Rp 3.650.000">Paket 4 Kamera Hilook - Rp 3.650.000</option>
+                                    <option value="Paket 6 Kamera Hilook - Rp 5.250.000">Paket 6 Kamera Hilook - Rp 5.250.000</option>
+                                    <option value="Paket 8 Kamera Hilook - Rp 6.350.000">Paket 8 Kamera Hilook - Rp 6.350.000</option>
+                                    <option value="Paket 10 Kamera Hilook - Rp 8.050.000">Paket 10 Kamera Hilook - Rp 8.050.000</option>
+                                    <option value="Paket 16 Kamera Hilook - Rp 11.950.000">Paket 16 Kamera Hilook - Rp 11.950.000</option>
+                                    <option value="Custom Paket / Jasa Pasang Saja">Kustom Paket / Jasa Pasang Saja</option>
+                                    <option value="Perbaikan / Jasa Perbaikan">Maintenance / Jasa Perbaikan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Catatan Tambahan (Opsional)</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment-alt input-icon-textarea"></i>
+                                <textarea id="message" rows="3" placeholder="Tuliskan kebutuhan khusus Anda..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-gradient btn-full"><i class="fab fa-whatsapp"></i> Hubungkan ke WhatsApp</button>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </section>
 
